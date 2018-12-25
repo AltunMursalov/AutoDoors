@@ -11,12 +11,6 @@
           </v-list-tile-action>
           <v-list-tile-content>{{ item.title }}</v-list-tile-content>
         </v-list-tile>
-        <v-list-tile @click="userSignOut" v-if="isAuthenticated">
-          <v-list-tile-action>
-            <v-icon>exit_to_app</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>Sign Out</v-list-tile-content>
-        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
 
@@ -39,10 +33,6 @@
           :to="item.path">
           <v-icon left dark>{{ item.icon }}</v-icon>
           {{ item.title }}
-        </v-btn>
-        <v-btn flat @click="userSignOut" v-if="isAuthenticated">
-          <v-icon left>exit_to_app</v-icon>
-          Sign Out
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
