@@ -14,13 +14,13 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar app>
+    <v-toolbar dark color="primary" app>
       <span class="hidden-sm-and-up">
         <v-toolbar-side-icon @click="sidebar = !sidebar">
         </v-toolbar-side-icon>
       </span>
       <v-toolbar-title>
-        <router-link to="/" tag="span" style="cursor: pointer">
+        <router-link to="/" tag="span" style="cursor: pointer;" class="white--text">
           {{ appTitle }}
         </router-link>
       </v-toolbar-title>
@@ -50,8 +50,7 @@ export default {
       sidebar: false,
       menuItems: [
         { title: 'Home', path: '/home', icon: 'home' },
-        { title: 'Signin', path: '/signin', icon: 'lock_open' },
-        { title: 'Signup', path: '/signup', icon: 'account_circle' }
+        { title: 'Contacts', path: '/contacts', icon: 'list_alt' }
       ]
     }
   },

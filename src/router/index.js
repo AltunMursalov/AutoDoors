@@ -1,17 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Carousel from '@/components/Carousel'
+
+// Global components
+Vue.component('carousel', Carousel)
 
 const routerOptions = [
-  { path: '/', component: 'Landing' },
-  { path: '/signin', component: 'Signin' },
-  { path: '/signup', component: 'Signup' },
-  { path: '/home', component: 'Home' }
+  { path: '/', components: { default: 'Landing', carousel: 'carousel' }, name: 'Landing' },
+  { path: '/home', component: 'Home', name: 'Home' }
 ]
 
 const routes = routerOptions.map(route => {
   return {
     ...route,
-    component: () => import(`@/components/${route.component}.vue`)
+    component: () => import(`@/components/${route.name}.vue`)
   }
 })
 

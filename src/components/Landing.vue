@@ -1,6 +1,7 @@
 <template>
   <v-container fluid>
     <v-layout row wrap>
+      <carousel></carousel>
       <v-flex xs12 text-xs-center mt-5>
         <h1>Welcome to Awesome App</h1>
       </v-flex>
