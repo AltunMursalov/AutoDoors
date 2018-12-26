@@ -35,10 +35,47 @@
           {{ item.title }}
         </v-btn>
       </v-toolbar-items>
+      <v-toolbar-side-icon>
+        <v-badge color="success">
+        <span slot="badge">3</span>
+        <v-icon>shopping_cart</v-icon>
+        </v-badge>
+      </v-toolbar-side-icon>
     </v-toolbar>
     <v-content>
       <router-view></router-view>
     </v-content>
+    <v-footer
+    dark
+    height="auto"
+  >
+    <v-card
+      flat
+      tile
+      class="indigo lighten-1 white--text text-xs-center"
+    >
+      <v-card-text>
+        <v-btn
+          v-for="icon in icons"
+          :key="icon"
+          class="mx-3 white--text"
+          icon
+        >
+          <v-icon size="24px">{{ icon }}</v-icon>
+        </v-btn>
+      </v-card-text>
+
+      <v-card-text class="white--text pt-0">
+        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </v-card-text>
+
+      <v-divider></v-divider>
+
+      <v-card-text class="white--text">
+        &copy;2018 — <strong>Vuetify</strong>
+      </v-card-text>
+    </v-card>
+  </v-footer>
   </v-app>
 </template>
 
@@ -46,8 +83,14 @@
 export default {
   data () {
     return {
-      // appTitle: 'Auto-Doors',
       sidebar: false,
+      icons: [
+        'fa fa-facebook',
+        'facebook-box',
+        'fab fa-google-plus',
+        'fab fa-linkedin',
+        'fab fa-instagram'
+      ],
       menuItems: [
         { title: 'Home', path: '/home', icon: 'home' },
         { title: 'Contacts', path: '/contacts', icon: 'list_alt' }
